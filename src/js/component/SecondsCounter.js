@@ -5,24 +5,22 @@ export function SecondsCounter(props) {
 	const partial = "000000" + props.seconds.toString();
 	const counterOrganization = partial.substr(partial.length - 6).split("");
 	let counterDivs = counterOrganization.map((seconds, i) => (
-		<div key={i} className="col">
-			<div className="card">
-				<div className="card-body">{seconds}</div>
-			</div>
+		<div key={i} className="card">
+			<div className="card-body text-white">{seconds}</div>
 		</div>
 	));
 
 	return (
-		<div className="container">
+		<div className="container-fluid">
 			<div className="row">
 				<div className="col">
-					<div class="card">
-						<div class="card-body">
+					<div className="card">
+						<div className="card-body text-white">
 							<i className="far fa-clock"></i>
 						</div>
 					</div>
+					{counterDivs}
 				</div>
-				{counterDivs}
 			</div>
 		</div>
 	);
